@@ -16,4 +16,14 @@ public class Shuffle {
 		}
 	}
 
+	public static void testShuffle(int i, int j) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void testBadShuffle(int i, int j) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

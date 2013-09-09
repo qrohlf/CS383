@@ -1,10 +1,9 @@
 package a1;
+
+import edu.princeton.cs.introcs.*;
+
 import static org.junit.Assert.*;
-import StdDraw;
-import StdOut;
-
 import org.junit.Test;
-
 import static java.util.Arrays.*;
 
 public class A1Test {
