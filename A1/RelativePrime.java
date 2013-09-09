@@ -1,6 +1,9 @@
+package a1;
+
 public class RelativePrime {
-    public static void generateMatrix(int n) {
+    public static boolean[][] generateMatrix(int n) {
         boolean[][] matrix;
+        return matrix;
     }
     
     /**
