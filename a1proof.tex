@@ -1,0 +1,21 @@
+\documentstyle{article}
+
+\title{Assignment 1 Proof}
+
+\author{YOUR NAME HERE!}
+
+\begin{document}
+
+\maketitle
+
+Consider an array of N-elements. Any array of n-elements can be composed in $N!$ different ways, consider the following three element array.
+\begin{equation}
+[A,B,C] [A,C,B] [B,A,C] [B,C,A] [C,A,B] [C,B,A]
+\end{equation}
+Our good shuffle method matches this concept. We end up with the 6 combinations with equal distribution. 
+If we use the bad shuffle method on our 3-element array from above, we end up with $n^n$ different paths and they create an unequal distribution which is shown below.
+\begin{equation}
+[A,B,C] = 4 [A,C,B] = 5 [B,A,C] = 5 [B,C,A] = 5 [C,A,B] = 4 [C,B,A] = 4
+\end{equation}
+This should suffice as a counter example, since the distribution is not equal this is not random. I have all of the work if you want to look at it. 
+\end{document}
