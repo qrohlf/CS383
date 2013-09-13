@@ -19,7 +19,7 @@ public class Shuffle {
 	public static void badShuffle(double[] a) {
 		int N = a.length;
 		for (int i = 0; i < N; i++) {
-			int r = uniform(N - i);
+			int r = uniform(N);
 			double temp = a[i];
 			a[i] = a[r];
 			a[r] = temp;
@@ -62,14 +62,16 @@ public class Shuffle {
 
 	public static void testBadShuffle(int m, int n) {
 		double[] a = new double[m];
+		double[] b;
 		int[][] results = new int[m][m];
 		for (int i = 0; i < a.length; i++) {
 			a[i] = i;
 		}
 		for (int i = 0; i < n; i++) {
-			badShuffle(a);
-			for (int j = 0; j < a.length; j++) {
-				results[(int)a[j]][j]++;
+			b = a.clone();
+			badShuffle(b);
+			for (int j = 0; j < b.length; j++) {
+				results[(int)b[j]][j]++;
 			}
 		}
 		printResults(results);
