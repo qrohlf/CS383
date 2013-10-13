@@ -54,6 +54,7 @@ public class QuickUnionUF {
     public static void main(String[] args) {
         int N = readInt();
         QuickUnionUF uf = new QuickUnionUF(N);
+        println("# components: " + uf.count());
         // read in a sequence of pairs of integers (each in the range 0 to N-1),
         // calling find() for each pair: If the members of the pair are not already
         // call union() and print the pair.
@@ -63,8 +64,8 @@ public class QuickUnionUF {
             if (uf.connected(p, q)) continue;
             uf.union(p, q);
             println(p + " " + q);
+            println("# components: " + uf.count());
         }
-        println("# components: " + uf.count());
     }
 
     // These getters added by Peter Drake for purposes of JUnit testing
