@@ -2,8 +2,8 @@ package a4;
 import edu.princeton.cs.algs4.Point2D;
 import static edu.princeton.cs.introcs.StdDraw.*;
 import static edu.princeton.cs.introcs.StdRandom.*;
-
 import static org.junit.Assert.*;
+
 import org.junit.Before;
 import org.junit.Test;
 

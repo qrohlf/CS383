@@ -3,6 +3,8 @@ package a3;
 import static edu.princeton.cs.introcs.StdIn.*;
 import static edu.princeton.cs.introcs.StdOut.*;
 
+import java.util.Arrays;
+
 public class QuickUnionUF {
     private int[] id;    // id[i] = parent of i
     private int count;   // number of components
@@ -64,7 +66,7 @@ public class QuickUnionUF {
             if (uf.connected(p, q)) continue;
             uf.union(p, q);
             println(p + " " + q);
-            println("# components: " + uf.count());
+            println(Arrays.toString(uf.getId()));
         }
     }
 

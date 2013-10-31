@@ -5,6 +5,7 @@ import java.util.Arrays;
 import edu.princeton.cs.introcs.StdIn;
 import edu.princeton.cs.introcs.StdOut;
 import edu.princeton.cs.introcs.StdRandom;
+import edu.princeton.cs.introcs.Stopwatch;
 /*************************************************************************
  *  Compilation:  javac Quick.java
  *  Execution:    java Quick < input.txt
@@ -184,26 +185,46 @@ public class Quick {
         }
     }
 
-    /**
-     * Reads in a sequence of strings from standard input; quicksorts them; 
-     * and prints them to standard output in ascending order. 
-     * Shuffles the array and then prints the strings again to
-     * standard output, but this time, using the select method.
+    /** determine the value of M for which quicksort runs fastest 
+     * in your computing environment to sort random arrays 
+     * of N doubles, for N = 10^3, 10^4, 10^5, and 10^6. 
+     * Plot average running times for M from 0 to 30 for each value of M. 
      */
     public static void main(String[] args) {
-        String[] a = StdIn.readAllStrings();
-        Quick.sort(a);
-        show(a);
-
-        // shuffle
-        StdRandom.shuffle(a);
-
-        // display results again using select
-        StdOut.println();
-        for (int i = 0; i < a.length; i++) {
-            String ith = (String) Quick.select(a, i);
-            StdOut.println(ith);
-        }
+    	runExp(1000);
+    	runExp(10000);
+    	runExp(100000);
+    	runExp(1000000);
+        
+    }
+    
+    private static void runExp(int N) {
+    	Double[] big = getArray(N);
+    	StdOut.printf("Running experiment for N=%d with 3 trials per M\n", N);
+    	StdOut.println("  M  |  time  ");
+    	double time;
+    	for (int M=0; M<=30; M++) {
+    		time = 0;
+    		for (int i=0; i<3; i++) {
+    			StdRandom.shuffle(big);
+    			time+=TimeQuickSort(big, M);
+    		}
+    		StdOut.printf(" %3d | %1.5f \n", M, time/3.0);
+    	}
+    }
+    
+    private static Double[] getArray(int n) {
+    	Double[] arr = new Double[n];
+    	for (int i=0; i<arr.length; i++) {
+    		arr[i] = StdRandom.uniform();
+    	}
+    	return arr;
+    }
+    
+    private static double TimeQuickSort(Double[] arr, int cutoff) {
+    	Stopwatch watch = new Stopwatch();
+    	Quick.sort(arr, cutoff);
+    	return watch.elapsedTime();
     }
 
 	

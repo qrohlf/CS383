@@ -9,9 +9,6 @@ public class Triplicates {
 	private enum Array { A, B, C};
 
 	public static String find(String[] a, String[] b, String[] c) {
-		Quick.sort(a);
-		Quick.sort(b);
-		Quick.sort(c);
 		
 		TreeMap<String, EnumSet<Array>> tracking = new TreeMap<String, EnumSet<Array>>();
 		for (int i=0; i<a.length; i++) {
