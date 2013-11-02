@@ -172,24 +172,24 @@ public class MaxPQ<Key> implements Iterable<Key> {
     **********************************************************************/
 
     private void swim(int k) {
+    	Key key = pq[k];
         while (k > 1 && less(k/2, k)) {
-            Key swap = pq[k];
             pq[k] = pq[k/2];
-            pq[k/2] = swap;
             k = k/2;
         }
+        pq[k] = key;
     }
 
     private void sink(int k) {
+    	Key key = pq[k];
         while (2*k <= N) {
             int j = 2*k;
             if (j < N && less(j, j+1)) j++;
             if (!less(k, j)) break;
-            Key swap = pq[k];
             pq[k] = pq[j];
-            pq[j] = swap;
             k = j;
         }
+        pq[k] = key;
     }
 
    /***********************************************************************

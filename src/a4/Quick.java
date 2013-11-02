@@ -76,8 +76,8 @@ public class Quick {
   		
         if (hi <= lo) return;
         int j = partition(a, lo, hi);
-        sort(a, lo, j-1);
-        sort(a, j+1, hi);
+        sort(a, lo, j-1, cutoff);
+        sort(a, j+1, hi, cutoff);
         assert isSorted(a, lo, hi);
     }
 
