@@ -9,6 +9,7 @@ public class SpaceDisagreement {
 	double[][] coords;
 
 	public SpaceDisagreement(int n) {
+		
 		g = new Graph(n);
 		coords = new double[n][2];
 		for (int i=0; i<n; i++) {
@@ -34,6 +35,8 @@ public class SpaceDisagreement {
 	}
 
 	public void draw() {
+		StdDraw.clear();
+		StdDraw.show(1); //Turn on animation mode
 		Biconnected b = new Biconnected(g);
 		StdDraw.setPenColor(StdDraw.BLACK);
 		for (int i=0; i<coords.length; i++) {

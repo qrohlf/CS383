@@ -43,8 +43,10 @@ public class AnimatedPrim {
 		return Math.sqrt(Math.pow(x1-x2, 2) + Math.pow(y1-y2, 2));
 	}
 	
+	// Render the initial graph
 	public void draw() {
-		StdDraw.show(1);
+		StdDraw.clear();
+		StdDraw.show(1); //Turn on animation mode
 		StdDraw.setPenColor(StdDraw.GRAY);
 		for (int i=0; i<coords.length; i++) {
 			for (Edge j : g.adj(i)) {
