@@ -35,9 +35,9 @@ public class SpaceDisagreement {
 
 	public void draw() {
 		Biconnected b = new Biconnected(g);
+		StdDraw.setPenColor(StdDraw.BLACK);
 		for (int i=0; i<coords.length; i++) {
 			for (int j : g.adj(i)) {
-				StdDraw.setPenColor(StdDraw.BLACK);
 				StdDraw.line(coords[i][0], coords[i][1],coords[j][0], coords[j][1]);
 			}
 		}
