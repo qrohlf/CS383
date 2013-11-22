@@ -8,7 +8,7 @@ public class GridPath {
 	private boolean[] path;
 
 	public GridPath(int[][] grid) {
-		path = new boolean[100];
+		path = new boolean[grid.length + grid[0].length];
 		int rcost, dcost;
 		int i, j;
 		for (i=grid.length-1; i>=0; i--) {
